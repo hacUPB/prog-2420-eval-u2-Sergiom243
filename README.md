@@ -1,6 +1,6 @@
 # Documentación del proyecto
 ## Unidad 2
 
-Estudiante:  
-ID:  
+Estudiante:  Sergio Marín
+ID:  000540019
 ---
