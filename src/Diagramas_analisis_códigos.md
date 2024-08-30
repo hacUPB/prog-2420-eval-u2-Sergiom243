@@ -1,12 +1,17 @@
+# Análisis
+![alt text](<Análisis p2.png>)
+
+# Diagrama de bloques problema 1
 ![alt text](EJ1.png)
-![alt text](EJ2.png)
 
 # Reserva de aerolineas
-
+```
 Inicio
-    Definir "
-    Destino" Med-Car=1, Med-Bog=2, Bog-Med=3, Bog-Car=4, Car-Med=5, Car-Bog=6
+    
+    Definir "Destino" Med-Car=1, Med-Bog=2, Bog-Med=3, Bog-Car=4, Car-Med=5, Car-Bog=6
+    
     Definir "Distacia" = Med-Bog=240km, Med-Car=461km, Bog-Car=657km
+    
     Definir "asientos" = C-pasillo, A-ventana, B-sin preferencia.
     Leer asientos
 
@@ -42,3 +47,15 @@ fin si
 Si
     usuario tiene preferencias 
     entonces elegir asientos: A, B o C.
+    si no 
+    elegir al azar una letra y un asiento del 1 al 29
+    fin si
+imprimir resultados
+fin
+``` 
+
+# Análisis P2
+
+
+# Diagrama de bloques Problema 2
+![alt text](EJ2.png)
