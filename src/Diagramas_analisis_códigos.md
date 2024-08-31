@@ -1,5 +1,5 @@
 # Análisis
-![alt text](<Análisis p1-1.png>)
+![alt text](Análisisp1.png)
 
 # Diagrama de bloques problema 1
 ![alt text](EJ1.png)
@@ -55,7 +55,7 @@ fin
 ``` 
 
 # Análisis P2
-![alt text](<Análisis p2.png>)
+![alt text](Análisisp2.png)
 
 # Diagrama de bloques Problema 2
 ![alt text](EJ2.png)
