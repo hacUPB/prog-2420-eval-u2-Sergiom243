@@ -1,5 +1,5 @@
 # Análisis
-![alt text](<Análisis p2.png>)
+![alt text](<Análisis p1-1.png>)
 
 # Diagrama de bloques problema 1
 ![alt text](EJ1.png)
@@ -55,7 +55,40 @@ fin
 ``` 
 
 # Análisis P2
-
+![alt text](<Análisis p2.png>)
 
 # Diagrama de bloques Problema 2
 ![alt text](EJ2.png)
+
+# Simulador satélite
+
+```
+Inicio
+    Leer Altitud_Inicial("Altitud en km del satelite: ")
+    Leer Altitud_minima_seguridad("Altitud_minima_seguridad en que el satelite puede sobrevivir el satelite: ")
+    Leer Coeficiente_arrastre("Coeficiente_arrastre del satelite: ")
+    Definir Altitud_Perdida = 0
+    Definir Orbitas = 0
+    Definir Altitud = Altitud_Inicial
+    Mientras Altitud >= Altitud_Minima:
+Definir Altitud_Perdida: Altitud*Cd
+Definir Altitud = Altitud-Altitud_perdida
+Orbitas = Orbitas + 1 
+Cd = Cd + 0.001
+Si Altitud < Altitud_Minima 
+Escribir("Se ha perdido conexión con satelite")
+Si Altitud_Perdida <= 0.1
+Escribir("Satelite estabilizado")
+```
+
+# Auto evaluación
+
+#### *Criterios y calificación*
+
+1-Asistencia y participación: Siento que la calificación deberia de rondar el (4.5-5) debido a que asisto a las clases y en estas hago ciertas preguntas o aportes los cuales pueden favorecer el aprendizaje propio y de mis compañeros.
+
+2-Análisis: La calificación de esta está entre (4-4.5)ya que siento que se me puede dificultar el hecho de identificar lo que se puede insertar por parte del usuario o de lo que se encarga la máquina. Mas que todo el enfoque de lo que son las variables y constantes a veces me puede parecer confuso a la hora de identificarlos.
+
+3-Pseudocódigo: para este criterio la nota está ente (4-4.5) porque siento que me falta práctica a la hora de definir ciertas variables o la manera en la que funciona un blucle, sin embargo siento que el proceso de mejora de estos es mas significante ya que se plantean problemas como estos que involucran ciertos bucles.
+
+4-Organización y presentacion: La calificación está entre (4.5-5) ya que siento que soy organizado a la hora de crear y poner los archivos donde corresponden, haciendo que los procesos de busqueda de los archivos sea menos compleja para el usuario que lo requiera. Ademas de utilizar las carpetas que se proveen con el enlace de github y darles un uso relacionado a lo hecho en clase y con la unidad.
