@@ -1,8 +1,5 @@
+from os import system
 
-def main():
-    #Tu código va aquí
-    pass # borra esta línea cuando con inicies tu código
+print("Ingresar el título con el que se identifica.\n 1.Sr\n 2.Sra")
+Título = int(input("ingrese la opción"))
 
-
-if __name__ == "__main__":
-    main()
