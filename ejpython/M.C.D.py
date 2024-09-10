@@ -16,12 +16,12 @@ def simplifica_fraccion(num1:int, num2:int, mcd:int):
 
     numerador = num1/mcd
     denominador = num2/mcd
-    
+    print (f'{num1}/{num2} = {numerador}/{denominador}')
 
-    Lista_num = calcular_divisores (469)
-    Lista_den = calcular_divisores (33)
-    print(f'divisores del numerador: {Lista_num}')
-    print (f'divisores del denominador: {Lista_den}')
+Lista_num = calcular_divisores (469)
+Lista_den = calcular_divisores (33)
+print(f'divisores del numerador: {Lista_num}')
+print (f'divisores del denominador: {Lista_den}')
 
-    mcd = maximo_comun_divisor ({Lista_num}, {Lista_den})
-    print (f'el máximo comun divisor es {mcd}')
+mcd = maximo_comun_divisor (Lista_num, Lista_den)
+print (f'el máximo comun divisor es {mcd}')
