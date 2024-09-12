@@ -63,15 +63,21 @@ elif Distancia == 2:
     elif Dia in ["Sábado", "Domingo"]:
         precio_final = 213000
 
-if Asientos  == 'Ventana':
-    Asientos = "A"
-elif Asientos == 'Pasillo':
-    Asientos = "B"
-elif Asientos == 'Medio':
-    Asientos = "C"
-else: 
-    Asientos = "F"
+while True:
+    Asiento = input("Por favor ingresar su asiento de preferencia (Ventana), (Pasillo), (Medio), (Aleatorio): ")
+    if Asiento not in Asientos:
+        print ("Por favor ingresar un lugar de asiento válido")
+        continue
 
-print (f"Su reserva ha sido confirmada. \n El vuelo desde {Origen} hacia {Destino} ha sido confirmado con éxito, para el dia {Dia} {fecha_ingresada}\n Pasajero: {Nombre} Asiento: {Fila} {Asientos} por un precio total de ${precio_final} ")
+    if Asientos  == 'Ventana':
+        Puesto_Asignado = "A"
+    elif Asientos == 'Pasillo':
+        Puesto_Asignado = "B"
+    elif Asientos == 'Medio':
+        Puesto_Asignado = "C"
+    else: 
+        Puesto_Asignado = "F"
+
+print (f"Su reserva ha sido confirmada. \n El vuelo desde {Origen} hacia {Destino} ha sido confirmado con éxito, para el dia {Dia} {fecha_ingresada}\n Pasajero: {Nombre} Asiento: {Fila} {Puesto_Asignado} por un precio total de ${precio_final} ")
 
 
