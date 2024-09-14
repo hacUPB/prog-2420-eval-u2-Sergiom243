@@ -1,33 +1,25 @@
-def simular_desintegracion_orbital():
-    
-    altitud_inicial = float(input("Ingrese la altitud inicial del satélite (en km): "))
-    coeficiente_arrastre = float(input("Ingrese el coeficiente de arrastre inicial (por ejemplo, 0.01): "))
-    altitud_minima_seguridad = float(input("Ingrese la altitud mínima de seguridad (en km): "))
+orbita = 0
 
-   
-    altitud_actual = altitud_inicial
-    orbitas_completadas = 0
-    perdida_altitud = 0
+Altitud_inicial = float(input("por favor ingrese una altitud inicial en km: "))
+Altitud_mínima = float(input("por favor ingrese una altitud de seguridad en km: "))
+Coeficiente_arrastre = float(input("por favor ingrese un coeficiente de arrastre(ejemplo: 0.01): "))
 
-   
-    while altitud_actual > altitud_minima_seguridad:
-       
-        perdida_altitud = coeficiente_arrastre * altitud_actual
-        altitud_actual -= perdida_altitud
-        orbitas_completadas += 1
+final_simulacion = True 
+while final_simulacion:
 
-        
-        coeficiente_arrastre += 0.0000000001
-        
-        if perdida_altitud < 0.001:
-            print(f"El satélite se ha estabilizado en una órbita baja.")
-            print(f"Altitud final: {altitud_actual:.2f} km")
-            print(f"Órbitas completadas: {orbitas_completadas}")
-            return
+    cambio_altitud = Altitud_inicial * Coeficiente_arrastre
+    Diferencia_altitud = Altitud_inicial - cambio_altitud
+    orbita += 1
+    Coeficiente_arrastre += 0.0001 
 
-   
-    print(f"El satélite ha reingresado en la atmósfera terrestre y se ha desintegrado.")
-    print(f"Número total de órbitas completadas: {orbitas_completadas}")
+    if Diferencia_altitud < Altitud_mínima:
+        print (f"el satelite regreso a la órbita y se desintegró, logro {orbita} orbitas")
+        final_simulacion = False
+
+    if Diferencia_altitud < :
+        print (f"el satelite se estabilizó a las {orbita} orbitas")
+        final_simulacion = False
 
 
-simular_desintegracion_orbital()
+
+    print (f"Orbita: {orbita} altitud en km: {Diferencia_altitud} y coeficiente de arrastre: {Coeficiente_arrastre}")
