@@ -1,34 +1,33 @@
-def simular_desintegracion_orbital():
-    # Solicitar los datos de entrada al usuario
-    altitud_inicial = float(input("Ingrese la altitud inicial del satélite (en km): "))
-    coeficiente_arrastre = float(input("Ingrese el coeficiente de arrastre inicial (por ejemplo, 0.01): "))
-    altitud_minima_seguridad = float(input("Ingrese la altitud mínima de seguridad (en km): "))
+orbita = 0
+incremento_arrastre = 0
 
-    # Variables iniciales
-    altitud_actual = altitud_inicial
-    orbitas_completadas = 0
-    perdida_altitud = 0
+verificacion_altitud = True
+while verificacion_altitud:
+    Altitud_inicial = float(input("Por favor ingrese una altitud inicial en km: "))
+    Altitud_mínima = float(input("Por favor ingrese una altitud de seguridad en km: "))
 
-    # Simulación de órbitas hasta que el satélite reingrese o se estabilice
-    while altitud_actual > altitud_minima_seguridad:
-        # Calcular la pérdida de altitud en esta órbita
-        perdida_altitud = coeficiente_arrastre * altitud_actual
-        altitud_actual -= perdida_altitud
-        orbitas_completadas += 1
+    if Altitud_inicial <= Altitud_mínima:
+        print("Error: La altitud inicial debe ser mayor que la altitud mínima. Intente de nuevo.")
+    else:
+        verificacion_altitud = False 
 
-        # Aumentar el coeficiente de arrastre (simulando mayor resistencia a menor altitud)
-        coeficiente_arrastre += 0.0001
+Coeficiente_arrastre = float(input("Por favor ingrese un coeficiente de arrastre (ejemplo: 0.01): "))
+incremento_arrastre += 0.00001   
 
-        # Si la pérdida de altitud es muy pequeña, se considera que el satélite se estabiliza
-        if perdida_altitud < 0.001:
-            print(f"El satélite se ha estabilizado en una órbita baja.")
-            print(f"Altitud final: {altitud_actual:.2f} km")
-            print(f"Órbitas completadas: {orbitas_completadas}")
-            return
+final_simulacion = True
+while final_simulacion:
+    cambio_altitud = Altitud_inicial * Coeficiente_arrastre
+    Diferencia_altitud = Altitud_inicial - cambio_altitud
+    Altitud_inicial = Diferencia_altitud
+    orbita += 1
 
-    # Si el satélite reingresa en la atmósfera
-    print(f"El satélite ha reingresado en la atmósfera terrestre y se ha desintegrado.")
-    print(f"Número total de órbitas completadas: {orbitas_completadas}")
+    if Diferencia_altitud < Altitud_mínima:
+        print(f"El satélite regresó a la atmósfera y se desintegró. Logró {orbita} órbitas.")
+        final_simulacion = False
 
-# Ejecutar la simulación
-simular_desintegracion_orbital()
+    elif cambio_altitud < 0.01:
+        print(f"El satélite se estabilizó a las {orbita} órbitas.")
+        final_simulacion = False
+
+    else:
+        print(f"Órbita: {orbita} - Altitud en km: {Diferencia_altitud:.2f} - Coeficiente de arrastre: {Coeficiente_arrastre:.4f}")
